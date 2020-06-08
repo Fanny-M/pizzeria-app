@@ -3,32 +3,58 @@
     {
       "id": 1,
       "name": "Savoyarde",
-      "ingredients": [
-        "crème fraîche",
-        " Reblochons"
-      ],
+      "ingredients": ["crème fraîche", " Reblochons"],
       "imageUrl": "https://picsum.photos/350",
       "price": 8.99
     },
     {
       "id": 2,
       "name": "Reine",
-      "ingredients": [
-        "crème fraîche",
-        " Reblochons"
-      ],
+      "ingredients": ["crème fraîche", " Reblochons"],
       "imageUrl": "https://picsum.photos/350",
       "price": 8.99
     },
     {
       "id": 3,
       "name": "Calzone",
-      "ingredients": [
-        "crème fraîche",
-        " Reblochons"
-      ],
+      "ingredients": ["crème fraîche", " Reblochons"],
+      "imageUrl": "https://picsum.photos/350",
+      "price": 10
+    },
+    {
+      "id": 4,
+      "name": "Savoyarde",
+      "ingredients": ["crème fraîche", " Reblochons"],
       "imageUrl": "https://picsum.photos/350",
       "price": 8.99
+    },
+    {
+      "id": 5,
+      "name": "Reine",
+      "ingredients": ["crème fraîche", " Reblochons"],
+      "imageUrl": "https://picsum.photos/350",
+      "price": 8.99
+    },
+    {
+      "id": 6,
+      "name": "Calzone",
+      "ingredients": ["crème fraîche", " Reblochons"],
+      "imageUrl": "https://picsum.photos/350",
+      "price": 10
+    },
+    {
+      "id": 7,
+      "name": "Reine",
+      "ingredients": ["crème fraîche", " Reblochons"],
+      "imageUrl": "https://picsum.photos/350",
+      "price": 8.99
+    },
+    {
+      "id": 8,
+      "name": "Calzone",
+      "ingredients": ["crème fraîche", " Reblochons"],
+      "imageUrl": "https://picsum.photos/350",
+      "price": 10
     }
   ]
 }

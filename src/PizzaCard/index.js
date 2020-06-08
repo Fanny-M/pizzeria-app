@@ -8,11 +8,12 @@ import shape from "@material-ui/core/styles/shape";
 
 const imageSize = 175;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: imageSize,
+    maxWidth: 175,
+    margin: `${theme.spacing(2)}px auto`,
   },
-});
+}));
 
 export default function PizzaCard({ name, ingredients, price, imageUrl }) {
   const classes = useStyles();

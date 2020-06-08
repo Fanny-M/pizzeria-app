@@ -1,10 +1,9 @@
 import { arrayOf, shape } from "prop-types";
 import { isNilOrEmpty } from "ramda-adjunct";
-import { Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import React from "react";
 
 import PizzaCard from "../PizzaCard";
-import { identical } from "ramda";
 
 export default function PizzaList({ data }) {
   if (isNilOrEmpty(data))
@@ -15,17 +14,18 @@ export default function PizzaList({ data }) {
     );
 
   return (
-    <>
+    <Grid container justify="space-evenly">
       {data.map(({ id, name, ingredients, imageUrl, price }) => (
-        <PizzaCard
-          key={id}
-          name={name}
-          ingredients={ingredients}
-          imageUrl={imageUrl}
-          price={price}
-        />
+        <Grid key={id} item xs={6}>
+          <PizzaCard
+            name={name}
+            ingredients={ingredients}
+            imageUrl={imageUrl}
+            price={price}
+          />
+        </Grid>
       ))}
-    </>
+    </Grid>
   );
 }
 
