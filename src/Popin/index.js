@@ -8,11 +8,12 @@ import {
   Button,
   Dialog,
 } from "@material-ui/core";
-export default function Popin({ open, title, children, actions }) {
+
+export default function Popin({ open, title, children, actions, onClose }) {
   return (
     <Dialog
       open={open}
-      //onClose={handleClose}
+      onClose={onClose}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
@@ -25,7 +26,7 @@ export default function Popin({ open, title, children, actions }) {
       <DialogActions>
         {actions.map(({ label, onClick, primary }) => (
           <Button
-            Key={label}
+            key={label}
             color={primary ? "primary" : "secondary"}
             onClick={onClick}
           >
@@ -47,6 +48,7 @@ Popin.propTypes = {
       onClick: func,
     })
   ),
+  onClose: func,
 };
 
 Popin.defaultProps = {
@@ -54,4 +56,5 @@ Popin.defaultProps = {
   title: null,
   actions: [],
   primary: bool,
+  onClose: Function.prototype,
 };
