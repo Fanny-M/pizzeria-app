@@ -9,21 +9,28 @@ import {
   Typography,
   CardContent,
 } from "@material-ui/core";
-import { arrayOf, string, number } from "prop-types";
+import { arrayOf, string, number, func } from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
 const imageSize = 175;
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: imageSize,
-    margin: `${theme.spacing(2)}px `,
+    margin: `${theme.spacing(2)}px`,
   },
   button: {
     flexGrow: 1,
   },
 }));
 
-export default function PizzaCard({ name, ingredients, price, imageUrl }) {
+export default function PizzaCard({
+  id,
+  name,
+  ingredients,
+  price,
+  imageUrl,
+  addToCart,
+}) {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
@@ -31,7 +38,7 @@ export default function PizzaCard({ name, ingredients, price, imageUrl }) {
         <CardMedia
           component="img"
           alt={name}
-          height={imageSize}
+          height="175"
           image={imageUrl}
           title={name}
         />
@@ -48,7 +55,14 @@ export default function PizzaCard({ name, ingredients, price, imageUrl }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button className={classes.button} color="primary" variant="contained">
+        <Button
+          className={classes.button}
+          color="primary"
+          variant="contained"
+          onClick={() => {
+            addToCart({ id, name, price, addedAt: Date.now() });
+          }}
+        >
           Ajouter
         </Button>
       </CardActions>
@@ -61,7 +75,9 @@ PizzaCard.propTypes = {
   ingredients: arrayOf(string).isRequired,
   price: number.isRequired,
   imageUrl: string,
+  addToCart: func,
 };
 PizzaCard.defaultProps = {
   imageUrl: null,
+  addToCart: Function.prototype,
 };
