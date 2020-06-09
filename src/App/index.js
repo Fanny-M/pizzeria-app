@@ -18,7 +18,7 @@ const fetchPizzas = () => {
 export default function App() {
   //const [pizzas, setPizzas] = React.useState([]);
   const { status, data } = useQuery("pizzas", fetchPizzas);
-  const [popinCartOpen, setPopinCartOpen] = React.useState(true);
+  const [popinCartOpen, setPopinCartOpen] = React.useState(false);
 
   return (
     <ThemeProvider theme={theme}>
