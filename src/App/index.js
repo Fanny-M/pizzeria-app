@@ -7,8 +7,12 @@ import { theme } from "./theme";
 import Header from "../Header";
 import PizzaList from "../PizzaList";
 
-const fetchPizzas = () =>
-  fetch("http://localhost:3001/pizzas").then((response) => response.json());
+const fetchPizzas = () => {
+  const baseUrlApi =
+    process.env.REACT_APP_BASE_URL_API || "http://localhost:3001";
+
+  return fetch(`${baseUrlApi}/pizzas`).then((response) => response.json());
+};
 
 export default function App() {
   //const [pizzas, setPizzas] = React.useState([]);
